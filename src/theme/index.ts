@@ -3,10 +3,12 @@ import { createTheme, Theme } from '@mui/material/styles';
 // 커스텀 컬러 팔레트
 declare module '@mui/material/styles' {
   interface Palette {
+    tertiary?: Palette['primary'];
     customPrimary?: Palette['primary'];
     customSecondary?: Palette['secondary'];
   }
   interface PaletteOptions {
+    tertiary?: PaletteOptions['primary'];
     customPrimary?: PaletteOptions['primary'];
     customSecondary?: PaletteOptions['secondary'];
   }
@@ -29,16 +31,22 @@ declare module '@mui/material/styles' {
 export const customTheme: Theme = createTheme({
   palette: {
     primary: {
-      main: '#3f51b5',
-      light: '#757de8',
-      dark: '#002984',
+      main: '#e9501f',
+      light: '#ff8149',
+      dark: '#ae2100',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#f50057',
-      light: '#ff5983',
-      dark: '#bb002f',
+      main: '#313131',
+      light: '#5a5a5a',
+      dark: '#0c0c0c',
       contrastText: '#ffffff',
+    },
+    tertiary: {
+      main: '#ffc107',
+      light: '#fff350',
+      dark: '#c79100',
+      contrastText: '#000000',
     },
     customPrimary: {
       main: '#4caf50',

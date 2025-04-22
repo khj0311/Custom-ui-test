@@ -14,6 +14,13 @@ declare module '@mui/material/styles' {
   }
 }
 
+// 버튼 바리언트 확장
+declare module '@mui/material/Button' {
+  interface ButtonPropsVariantOverrides {
+    rounded: true;
+  }
+}
+
 // 커스텀 타이포그래피 스타일
 declare module '@mui/material/styles' {
   interface TypographyVariants {
@@ -105,7 +112,7 @@ export const customTheme: Theme = createTheme({
       },
       variants: [
         {
-          props: { variant: 'rounded' },
+          props: { variant: 'rounded' as any },
           style: {
             borderRadius: 24,
           },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, GridProps, Box, BoxProps } from '@mui/material';
+import { Grid, GridProps } from '@mui/material';
 import styled from 'styled-components';
 
 export interface ColumnsProps {
@@ -38,20 +38,7 @@ export interface ColumnsProps {
   children: React.ReactNode;
 }
 
-interface ColumnProps extends BoxProps {
-  /**
-   * 컬럼의 너비를 12분할 중 차지하는 비율로 지정합니다.
-   * 반응형 크기를 위해 객체 형태로 지정할 수 있습니다.
-   * @example
-   * xs={12} md={6} lg={4}
-   * @default 12
-   */
-  xs?: GridProps['xs'];
-  sm?: GridProps['sm'];
-  md?: GridProps['md'];
-  lg?: GridProps['lg'];
-  xl?: GridProps['xl'];
-  
+interface ColumnProps extends GridProps {
   /**
    * 각 컬럼에 적용할 추가 스타일을 지정합니다.
    */
@@ -63,7 +50,15 @@ interface ColumnProps extends BoxProps {
   children: React.ReactNode;
 }
 
-const StyledContainer = styled(Grid)<{ withDivider?: boolean }>`
+interface StyledContainerProps {
+  withDivider?: boolean;
+}
+
+interface StyledColumnProps {
+  columnStyle?: React.CSSProperties;
+}
+
+const StyledContainer = styled(Grid)<StyledContainerProps>`
   ${({ withDivider }) => withDivider && `
     & > div:not(:last-child) {
       position: relative;
@@ -81,7 +76,7 @@ const StyledContainer = styled(Grid)<{ withDivider?: boolean }>`
   `}
 `;
 
-const StyledColumn = styled(Grid)<{ columnStyle?: React.CSSProperties }>`
+const StyledColumn = styled(Grid)<StyledColumnProps>`
   ${({ columnStyle }) => columnStyle && { ...columnStyle }}
 `;
 

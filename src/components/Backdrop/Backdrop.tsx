@@ -9,35 +9,35 @@ export interface BackdropProps extends MuiBackdropProps {
   open: boolean;
   
   /**
-   * 백드롭이 클릭되었을 때 호출되는 콜백 함수
+   * 백드롭 클릭 시 호출되는 콜백 함수
    */
   onClick?: () => void;
   
   /**
-   * 백드롭 내부에 표시할 콘텐츠
+   * 백드롭 내부 콘텐츠
    */
   children?: React.ReactNode;
   
   /**
-   * 로딩 표시기를 표시할지 여부
+   * 로딩 인디케이터 표시 여부
    * @default false
    */
   loading?: boolean;
   
   /**
-   * 로딩 표시기의 색상
+   * 로딩 인디케이터 색상
    * @default 'primary'
    */
-  loaderColor?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit';
+  loadingColor?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit';
   
   /**
-   * 로딩 표시기의 크기
+   * 로딩 인디케이터 사이즈
    * @default 40
    */
-  loaderSize?: number;
+  loadingSize?: number;
   
   /**
-   * 백드롭의 배경색 투명도
+   * 백드롭 투명도 (0-1 사이 값)
    * @default 0.7
    */
   opacity?: number;
@@ -66,8 +66,8 @@ export const Backdrop: React.FC<BackdropProps> = ({
   onClick,
   children,
   loading = false,
-  loaderColor = 'primary',
-  loaderSize = 40,
+  loadingColor = 'primary',
+  loadingSize = 40,
   opacity = 0.7,
   customStyle,
   ...rest
@@ -81,7 +81,7 @@ export const Backdrop: React.FC<BackdropProps> = ({
       {...rest}
     >
       {loading ? (
-        <CircularProgress color={loaderColor} size={loaderSize} />
+        <CircularProgress color={loadingColor} size={loadingSize} />
       ) : children}
     </StyledBackdrop>
   );

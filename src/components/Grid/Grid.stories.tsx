@@ -1,6 +1,5 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Grid, GridProps } from './Grid';
+import { Grid } from './Grid';
 import { Typography, Box } from '@mui/material';
 
 const meta: Meta<typeof Grid> = {

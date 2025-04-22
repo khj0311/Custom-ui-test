@@ -4,53 +4,53 @@ import styled from 'styled-components';
 
 export interface BackdropProps extends MuiBackdropProps {
   /**
-   * 백드롭이 열려있는지 여부
+   * Backdrop이 보이는지 여부
    */
   open: boolean;
   
   /**
-   * 백드롭 클릭 시 호출되는 콜백 함수
+   * Backdrop이 클릭되었을 때 호출되는 콜백 함수
    */
   onClick?: () => void;
   
   /**
-   * 백드롭 내부 콘텐츠
+   * Backdrop의 내부 콘텐츠
    */
   children?: React.ReactNode;
   
   /**
-   * 로딩 인디케이터 표시 여부
+   * true인 경우 로딩 인디케이터(CircularProgress)를 표시합니다.
    * @default false
    */
   loading?: boolean;
   
   /**
-   * 로딩 인디케이터 색상
+   * 로딩 인디케이터의 색상
    * @default 'primary'
    */
   loadingColor?: 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'inherit';
   
   /**
-   * 로딩 인디케이터 사이즈
+   * 로딩 인디케이터의 크기
    * @default 40
    */
   loadingSize?: number;
   
   /**
-   * 백드롭 투명도 (0-1 사이 값)
+   * Backdrop의 배경색 불투명도
    * @default 0.7
    */
   opacity?: number;
   
   /**
-   * 백드롭에 적용할 추가 스타일
+   * Backdrop에 적용할 추가 스타일
    */
   customStyle?: React.CSSProperties;
 }
 
 // 스타일드 컴포넌트를 사용하여 MUI Backdrop 확장
 const StyledBackdrop = styled(MuiBackdrop)<BackdropProps>`
-  z-index: ${({ theme }) => theme.zIndex.drawer + 1};
+  z-index: ${({ theme }) => theme.zIndex?.drawer + 1 || 1200};
   color: #fff;
   background-color: ${({ opacity = 0.7 }) => `rgba(0, 0, 0, ${opacity})`};
   
@@ -80,9 +80,7 @@ export const Backdrop: React.FC<BackdropProps> = ({
       customStyle={customStyle}
       {...rest}
     >
-      {loading ? (
-        <CircularProgress color={loadingColor} size={loadingSize} />
-      ) : children}
+      {loading ? <CircularProgress color={loadingColor} size={loadingSize} /> : children}
     </StyledBackdrop>
   );
 };

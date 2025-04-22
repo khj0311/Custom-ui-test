@@ -8,8 +8,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import styled from 'styled-components';
 
-// Material UI 아이콘 모두 임포트
-import * as Icons from '@mui/icons-material';
+// Material UI 아이콘 모두 임포트 (다른 이름으로 변경)
+import * as MaterialIcons from '@mui/icons-material';
 
 // 스타일링
 const IconsContainer = styled(Box)`
@@ -104,7 +104,7 @@ const ICON_CATEGORIES = {
   'Social': ['Person', 'People', 'Group', 'Share', 'Public', 'School', 'Favorite', 'ThumbUp']
 };
 
-export interface IconsProps {
+export interface IconsBrowserProps {
   /**
    * 아이콘 검색 필드에 표시될 플레이스홀더 텍스트
    */
@@ -119,7 +119,7 @@ export interface IconsProps {
 /**
  * Material UI 아이콘을 검색하고 표시하는 컴포넌트
  */
-export const Icons: React.FC<IconsProps> = ({
+export const Icons: React.FC<IconsBrowserProps> = ({
   searchPlaceholder = 'Search Material UI icons...',
   onIconClick,
 }) => {
@@ -130,11 +130,11 @@ export const Icons: React.FC<IconsProps> = ({
   
   // 모든 아이콘 가져오기
   const allIcons = useMemo(() => {
-    const icons = Object.keys(Icons).filter(key => {
+    const icons = Object.keys(MaterialIcons).filter(key => {
       // React 컴포넌트인 아이콘만 필터링
       return (
         key !== 'default' && 
-        typeof Icons[key as keyof typeof Icons] === 'function' &&
+        typeof MaterialIcons[key as keyof typeof MaterialIcons] === 'function' &&
         key.match(/^[A-Z]/) // 대문자로 시작하는 이름만 (컴포넌트)
       );
     });
@@ -194,7 +194,7 @@ export const Icons: React.FC<IconsProps> = ({
 
   // 동적으로 아이콘 렌더링하는 헬퍼 함수
   const renderIcon = (iconName: string) => {
-    const IconComponent = Icons[iconName as keyof typeof Icons] as React.ElementType;
+    const IconComponent = MaterialIcons[iconName as keyof typeof MaterialIcons] as React.ElementType;
     return IconComponent ? <IconComponent fontSize="medium" color="primary" /> : null;
   };
 

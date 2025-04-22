@@ -10,5 +10,8 @@ export * from './components/Grid';
 export * from './components/Carousel';
 export * from './components/VideoPlayer';
 
+// Documentation
+export * from './components/Icons';
+
 // Theme
 export * from './theme';

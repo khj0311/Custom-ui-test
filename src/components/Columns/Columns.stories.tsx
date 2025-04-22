@@ -1,4 +1,3 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { Columns, Column } from './Columns';
 import { Paper, Typography, Box } from '@mui/material';

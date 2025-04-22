@@ -8,8 +8,73 @@ import SearchIcon from '@mui/icons-material/Search';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import styled from 'styled-components';
 
-// Material UI 아이콘 모두 임포트 (다른 이름으로 변경)
-import * as MaterialIcons from '@mui/icons-material';
+// 직접 필요한 Material UI 아이콘 가져오기
+import HomeIcon from '@mui/icons-material/Home';
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import InfoIcon from '@mui/icons-material/Info';
+import WarningIcon from '@mui/icons-material/Warning';
+import ErrorIcon from '@mui/icons-material/Error';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import StarIcon from '@mui/icons-material/Star';
+import CloudIcon from '@mui/icons-material/Cloud';
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import DateRangeIcon from '@mui/icons-material/DateRange';
+import MenuIcon from '@mui/icons-material/Menu';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import RemoveIcon from '@mui/icons-material/Remove';
+import SettingsIcon from '@mui/icons-material/Settings';
+import PersonIcon from '@mui/icons-material/Person';
+import GroupIcon from '@mui/icons-material/Group';
+import PeopleIcon from '@mui/icons-material/People';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import ChatIcon from '@mui/icons-material/Chat';
+import ForumIcon from '@mui/icons-material/Forum';
+import MessageIcon from '@mui/icons-material/Message';
+import SendIcon from '@mui/icons-material/Send';
+import SaveIcon from '@mui/icons-material/Save';
+import PrintIcon from '@mui/icons-material/Print';
+import ShareIcon from '@mui/icons-material/Share';
+import PublicIcon from '@mui/icons-material/Public';
+import SchoolIcon from '@mui/icons-material/School';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import HelpIcon from '@mui/icons-material/Help';
+import CloseIcon from '@mui/icons-material/Close';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ImageIcon from '@mui/icons-material/Image';
+import MovieIcon from '@mui/icons-material/Movie';
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
+import VideocamIcon from '@mui/icons-material/Videocam';
+import CameraAltIcon from '@mui/icons-material/CameraAlt';
+import MicIcon from '@mui/icons-material/Mic';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
+import StopIcon from '@mui/icons-material/Stop';
+import VolumeUpIcon from '@mui/icons-material/VolumeUp';
+import VolumeMuteIcon from '@mui/icons-material/VolumeMute';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import LockIcon from '@mui/icons-material/Lock';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import DoneIcon from '@mui/icons-material/Done';
+import ClearIcon from '@mui/icons-material/Clear';
+import AttachFileIcon from '@mui/icons-material/AttachFile';
+import LinkIcon from '@mui/icons-material/Link';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 // 스타일링
 const IconsContainer = styled(Box)`
@@ -97,11 +162,83 @@ const NoResults = styled(Box)`
 const ICON_CATEGORIES = {
   'All': [], // 모든 아이콘
   'Actions': ['Add', 'Delete', 'Edit', 'Remove', 'Done', 'Clear', 'Send', 'Save', 'Print', 'Search', 'Settings'],
-  'Navigation': ['Home', 'Menu', 'More', 'Back', 'Forward', 'Close', 'Expand', 'Up', 'Down', 'ArrowBack', 'KeyboardArrowLeft'],
-  'Status': ['Info', 'Warning', 'Error', 'Check', 'Help', 'Alert', 'Notifications', 'CheckCircle'],
-  'Communication': ['Email', 'Message', 'Phone', 'Chat', 'Comment', 'Forum', 'Contact'],
-  'Media': ['Image', 'Movie', 'Music', 'Video', 'Camera', 'Mic', 'Play', 'Pause', 'Stop', 'Volume'],
-  'Social': ['Person', 'People', 'Group', 'Share', 'Public', 'School', 'Favorite', 'ThumbUp']
+  'Navigation': ['Home', 'Menu', 'MoreVert', 'ArrowBack', 'ArrowForward', 'Close', 'ExpandMore', 'ExpandLess', 'KeyboardArrowLeft', 'KeyboardArrowRight'],
+  'Status': ['Info', 'Warning', 'Error', 'Help', 'Notifications', 'CheckCircle', 'Done', 'Clear'],
+  'Communication': ['Email', 'Message', 'Phone', 'Chat', 'Forum', 'Send'],
+  'Media': ['Image', 'Movie', 'MusicNote', 'Videocam', 'CameraAlt', 'Mic', 'PlayArrow', 'Pause', 'Stop', 'VolumeUp', 'VolumeMute'],
+  'Social': ['Person', 'People', 'Group', 'Share', 'Public', 'School', 'Favorite', 'ThumbUp', 'AccountCircle']
+};
+
+// Material UI 아이콘 맵 정의
+const MATERIAL_ICONS: { [key: string]: React.ElementType } = {
+  Add: AddIcon,
+  Delete: DeleteIcon,
+  Edit: EditIcon,
+  Remove: RemoveIcon,
+  Done: DoneIcon,
+  Clear: ClearIcon,
+  Send: SendIcon,
+  Save: SaveIcon,
+  Print: PrintIcon,
+  Search: SearchIcon,
+  Settings: SettingsIcon,
+  Home: HomeIcon,
+  Menu: MenuIcon,
+  MoreVert: MoreVertIcon,
+  ArrowBack: ArrowBackIcon,
+  ArrowForward: ArrowForwardIcon,
+  Close: CloseIcon,
+  ExpandMore: ExpandMoreIcon,
+  ExpandLess: ExpandLessIcon,
+  KeyboardArrowLeft: KeyboardArrowLeftIcon,
+  KeyboardArrowRight: KeyboardArrowRightIcon,
+  Info: InfoIcon,
+  Warning: WarningIcon,
+  Error: ErrorIcon,
+  Help: HelpIcon,
+  Notifications: NotificationsIcon,
+  CheckCircle: CheckCircleIcon,
+  Email: EmailIcon,
+  Message: MessageIcon,
+  Phone: PhoneIcon,
+  Chat: ChatIcon,
+  Forum: ForumIcon,
+  Image: ImageIcon,
+  Movie: MovieIcon,
+  MusicNote: MusicNoteIcon,
+  Videocam: VideocamIcon,
+  CameraAlt: CameraAltIcon,
+  Mic: MicIcon,
+  PlayArrow: PlayArrowIcon,
+  Pause: PauseIcon,
+  Stop: StopIcon,
+  VolumeUp: VolumeUpIcon,
+  VolumeMute: VolumeMuteIcon,
+  Person: PersonIcon,
+  People: PeopleIcon,
+  Group: GroupIcon,
+  Share: ShareIcon,
+  Public: PublicIcon,
+  School: SchoolIcon,
+  Favorite: FavoriteIcon,
+  ThumbUp: ThumbUpIcon,
+  AccountCircle: AccountCircleIcon,
+  Star: StarIcon,
+  Cloud: CloudIcon,
+  AccessAlarm: AccessAlarmIcon,
+  AccessTime: AccessTimeIcon,
+  DateRange: DateRangeIcon,
+  Lock: LockIcon,
+  Visibility: VisibilityIcon,
+  VisibilityOff: VisibilityOffIcon,
+  Bookmark: BookmarkIcon,
+  ShoppingCart: ShoppingCartIcon,
+  LocalShipping: LocalShippingIcon,
+  AttachFile: AttachFileIcon,
+  Link: LinkIcon,
+  LocationOn: LocationOnIcon,
+  CalendarToday: CalendarTodayIcon,
+  ContentCopy: ContentCopyIcon
 };
 
 export interface IconsBrowserProps {
@@ -128,17 +265,9 @@ export const Icons: React.FC<IconsBrowserProps> = ({
   const [copied, setCopied] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('All');
   
-  // 모든 아이콘 가져오기
+  // 모든 아이콘 목록 가져오기
   const allIcons = useMemo(() => {
-    const icons = Object.keys(MaterialIcons).filter(key => {
-      // React 컴포넌트인 아이콘만 필터링
-      return (
-        key !== 'default' && 
-        typeof MaterialIcons[key as keyof typeof MaterialIcons] === 'function' &&
-        key.match(/^[A-Z]/) // 대문자로 시작하는 이름만 (컴포넌트)
-      );
-    });
-    return icons;
+    return Object.keys(MATERIAL_ICONS);
   }, []);
   
   // 필터링된 아이콘 관리
@@ -192,9 +321,9 @@ export const Icons: React.FC<IconsBrowserProps> = ({
     setSearchTerm(e.target.value);
   };
 
-  // 동적으로 아이콘 렌더링하는 헬퍼 함수
+  // 아이콘 렌더링 함수
   const renderIcon = (iconName: string) => {
-    const IconComponent = MaterialIcons[iconName as keyof typeof MaterialIcons] as React.ElementType;
+    const IconComponent = MATERIAL_ICONS[iconName];
     return IconComponent ? <IconComponent fontSize="medium" color="primary" /> : null;
   };
 

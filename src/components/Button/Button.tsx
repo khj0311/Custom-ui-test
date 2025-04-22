@@ -2,7 +2,14 @@ import React from 'react';
 import { Button as MuiButton, ButtonProps as MuiButtonProps } from '@mui/material';
 import styled from 'styled-components';
 
-export interface ButtonProps extends MuiButtonProps {
+// 사이즈 타입 확장을 위한 선언
+declare module '@mui/material/Button' {
+  interface ButtonPropsSizeOverrides {
+    xlarge: true;
+  }
+}
+
+export interface ButtonProps extends Omit<MuiButtonProps, 'size'> {
   /**
    * 버튼의 크기를 지정합니다.
    * @default 'medium'
@@ -62,11 +69,14 @@ export const Button: React.FC<ButtonProps> = ({
   customStyle,
   ...props
 }) => {
+  // MUI Button에 맞게 사이즈 변환
+  const muiSize = size !== 'xlarge' ? size : 'large';
+  
   return (
     <StyledButton
-      variant={variant}
+      variant={variant as any}
       color={color}
-      size={size}
+      size={muiSize}
       fullWidth={fullWidth}
       rounded={rounded}
       disabled={disabled}

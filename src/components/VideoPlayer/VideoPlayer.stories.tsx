@@ -1,6 +1,5 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { VideoPlayer, VideoPlayerProps } from './VideoPlayer';
+import { VideoPlayer } from './VideoPlayer';
 import { Box } from '@mui/material';
 
 const meta: Meta<typeof VideoPlayer> = {

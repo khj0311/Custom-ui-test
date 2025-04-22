@@ -8,14 +8,14 @@ Custom UI components based on Material UI with Storybook.
 - Customizable styling with Styled Components
 - TypeScript support
 - Storybook for component documentation and testing
-- Ready to be published as an npm package
+- Ready to be published as a package
 
 ## Getting Started
 
 ### Installation
 
 ```bash
-npm install
+yarn install
 ```
 
 ### Development
@@ -23,7 +23,7 @@ npm install
 Run Storybook to develop and test components:
 
 ```bash
-npm run storybook
+yarn storybook
 ```
 
 ### Build
@@ -31,7 +31,7 @@ npm run storybook
 Build the library for production:
 
 ```bash
-npm run build
+yarn build
 ```
 
 ## Usage

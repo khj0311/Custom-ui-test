@@ -1,6 +1,5 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Carousel, CarouselProps } from './Carousel';
+import { Carousel } from './Carousel';
 import { Box, Typography, Paper } from '@mui/material';
 
 const meta: Meta<typeof Carousel> = {

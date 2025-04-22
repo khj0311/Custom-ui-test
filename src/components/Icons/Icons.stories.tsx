@@ -1,6 +1,5 @@
-import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { Icons, IconsProps } from './Icons';
+import { Icons } from './Icons';
 import { Box } from '@mui/material';
 
 const meta: Meta<typeof Icons> = {
